@@ -3,23 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Výkup CS2 Skinů</title>
+    <title>EXCALIBUR SKINS | VÝKUP 2026</title>
     <style>
-        body { background-color: #0f172a; color: #f1f5f9; font-family: sans-serif; text-align: center; padding: 40px 20px; }
-        .container { max-width: 600px; margin: 0 auto; background: #1e293b; padding: 30px; border-radius: 12px; }
-        input { width: 100%; padding: 12px; margin: 20px 0; border-radius: 6px; border: none; box-sizing: border-box; }
-        .btn { background: #3b82f6; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; display: inline-block; cursor: pointer; }
+        /* --- Základní styly --- */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: #ffffff;
+            /* Mesh gradient pozadí + Abstraktní CS2 vzor */
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.7), #0f172a),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%231e293b' fill-opacity='0.2'%3E%3Cpath opacity='.5' d='M96 954L4 1000V0L96 46v908zM158 0v1000l92-46V46l-92-46z'/%3E%3Cpath d='M8.11 0L0 4.05V1000l8.11-4.05V0zM9.33 14l-.88.44V985.56l.88.44V14zm36.46 0l-.88.44V985.56l.88.44V14zm36.46 0l-.88.44V985.56l.88.44V14zm36.46 0l-.88.44V985.56l.88.44V14zm-6.46 12l-.88.44V961.56l.88.44V26zm36.46 0l-.88.44V961.56l.88.44V26z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+                linear-gradient(120deg, #0f172a, #1e293b, #0f172a);
+            background-size: auto, 250px 250px, 200% 200%;
+            animation: gradientShift 15s ease infinite;
+            display: flex;
+            flex-direction: column; /* Aby byl footer dole */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden; /* Skrýt horizontální scroll */
+            position: relative;
+        }
+
+        /* Animace pozadí */
+        @keyframes gradientShift {
+            0% { background-position: center, center, 0% 50%; }
+            50% { background-position: center, center, 100% 50%; }
+            100% { background-position: center, center, 0% 50%; }
+        }
+
+        /* --- Glassmorphism Container --- */
+        .container {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 30px;
+            padding: 50px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            margin-top: auto; /* Vycentrování obsahu */
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+            background: linear-gradient(90deg, #ffffff, #a5b4fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        p {
+            color: #94a3b8;
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+
+        /* --- Input Pole --- */
+        input[type="text"] {
+            width: 100%;
+            padding: 18px;
+            margin-bottom: 15px;
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid rgba(110, 231, 183, 0.2);
+            border-radius: 12px;
+            color: #ffffff;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #6ee7b7;
+            box-shadow: 0 0 15px rgba(110, 231, 183, 0.2);
+        }
+
+        /* --- CTA Tlačítko --- */
+        .btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(45deg, #3b82f6, #6366f1);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #6366f1, #3b82f6);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px -5px rgba(59, 130, 246, 0.6);
+        }
+
+        /* --- Footer s odkazy --- */
+        .footer {
+            margin-top: auto; /* Přichycení k dolní části */
+            padding: 40px 20px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            z-index: 10;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .social-icon {
+            display: block;
+            width: 30px;
+            height: 30px;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            opacity: 1;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            color: #475569;
+        }
+        
+        /* --- Responzivita --- */
+        @media (max-width: 500px) {
+            .container { padding: 30px; margin: 20px; border-radius: 20px; }
+            h1 { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <h1>Vykupuji CS2 Skiny</h1>
-        <p>Pošli mi své Trade URL a já ti obratem nacením tvůj inventář.</p>
+        <h1>EXCALIBUR</h1>
+        <p>Okamžitý výkup CS2 skinů. Prodej rychle, bezpečně a s férovou cenou.</p>
         
-        <form action="mailto:tve-jmeno@email.cz" method="post" enctype="text/plain">
-            <input type="text" name="TradeURL" placeholder="Vlož své Steam Trade URL zde" required>
-            <button type="submit" class="btn">Odeslat k nacenění</button>
+        <form action="mailto:tvuj-email@domena.cz" method="post" enctype="text/plain">
+            <input type="text" name="TradeURL" placeholder="Sem vlož své Steam Trade URL" required>
+            <button type="submit" class="btn">Získat nabídku</button>
         </form>
     </div>
-</body>
-</html>
+
+    <!-- Patička s odkazy na sociální sítě -->
+    <footer class="footer">
+        <div class="social-links">
+            <!-- FACEBOOK ICON -->
+            <a href="TVŮJ_ODKAZ_NA_FB" target="_blank" class="social-icon" title="Facebook">
+                <svg viewBox="0 0 24 24" fill="#ffffff"><path d="M9.101 23.691v-7.94h-2.66v-3.091h2.66V10.347c0-2.637 1.561-4.099 3.978-4.099 1.152 0 2.143.086 2.43.124v2.82h-1.67c-1.278 0-1.526.607-1.526 1.497v2.019h3.104l-.404 3.091h-2.7V23.691h-3.081z"/></svg>
+            </a>
+            <!-- INSTAGRAM ICON -->
+            <a href="TVŮJ_ODKAZ_NA_IG" target="_blank" class="social-icon" title="Instagram">
+                <svg viewBox="0 0 24 24" fill="#ffffff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.115.051 1.722.232 2.128.387.535.207.924.465 1.326.868.403.403.661.792.868 1.326.155.406.336 1.013.387 2.128.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.051 1.115-.232 1.722-.387 2.128-.207.535-.465.924-.868 1.326-.403.403-.792.661-1.326.868-.406.155-1.013.336-2.128.387-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.115-.051-1.722-.232-2.128-.387-.535-.207-.924-.465-1.326-.868-.403-.403-.661-.792-.868-1.326-.155-.406-.336-1.013-.387-2.128-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.051-1.115.232-1.722.387-2.128.207-.535.465-.924.868-1.326.403-.403.792-.661 1.326-.868.406-.155 1.013-.336 2.128-.387 1.266-.058 1.646-.07 4.85-.07m0-2.163c-3.259 0-3.667.014-4.947.072-1.277.058-2.15.248-2.913.546-.79.306-1.457.717-2.126 1.386-.669.669-1.08 1.336-1.386 2.126-.298.763-.488 1.636-.546 2.913-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.058 1.277.248 2.15.546 2.913.306.79.717 1.457 1.386 2.126.669.669 1.336 1.08 2.126 1.386.763.298 1.636.488 2.913.546 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.277-.058 2.15-.248 2.913-.546.79-.306 1.457-.717 2.126-1.386.669-.669 1.08-1.336 1.386-2.126.298-.763.488-1.636.546-2.913.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.058-1.277-.248-2.15-.546-2.913-.306-.79-.717-1.457-1.386-2.126-.669-.669-1.336-1.08-2.126-1.386-.763-.298-1.636-.488-2.913
